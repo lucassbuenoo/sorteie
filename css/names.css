@@ -1,0 +1,351 @@
+/* =====================================================
+   LAYOUT DA TELA DE NOMES
+===================================================== */
+
+.app {
+  min-height: calc(100vh - 190px);
+}
+
+.layout {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   PAINEL PRINCIPAL
+===================================================== */
+
+.names-panel {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.names-panel h2 {
+  font-size: 18px;
+}
+
+/* =====================================================
+   IMPORTAÇÃO
+===================================================== */
+
+.import-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.import-box label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.import-box span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* =====================================================
+   TEXTAREA
+===================================================== */
+
+.names-panel textarea {
+  min-height: 280px;
+  background: #020617;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 14px;
+  color: var(--text);
+  resize: vertical;
+}
+
+/* =====================================================
+   CARTÃO DE CONTROLE
+===================================================== */
+
+.control-card {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.control-card h3 {
+  font-size: 15px;
+}
+
+.control-card label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* =====================================================
+   OPÇÕES DE SORTEIO
+===================================================== */
+
+.draw-options {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.draw-qty {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.draw-qty label {
+  font-size: 11px;
+}
+
+.draw-qty input {
+  width: 80px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #020617;
+  color: var(--text);
+}
+
+/* Checkbox */
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.checkbox input {
+  accent-color: #6366f1;
+}
+
+/* =====================================================
+   BOTÕES
+===================================================== */
+
+.buttons-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.buttons-group button {
+  flex: 1;
+  min-width: 120px;
+}
+
+/* =====================================================
+   RESULTADOS
+===================================================== */
+
+.names-results {
+  display: flex;
+  flex-direction: column;
+}
+
+.names-results .control-card {
+  flex: 1;
+}
+
+.result-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Item */
+.result-item {
+  position: relative;
+  padding: 14px 14px 14px 46px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #111827, #020617);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+  animation: fadeInUp 0.3s ease;
+}
+
+.result-item::before {
+  content: attr(data-rank);
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: #020617;
+}
+
+/* Destaques */
+.rank-1::before {
+  background: linear-gradient(135deg, #facc15, #fde047);
+}
+
+.rank-2::before {
+  background: linear-gradient(135deg, #d1d5db, #9ca3af);
+}
+
+.rank-3::before {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+/* =====================================================
+   MODAL CONTAGEM
+===================================================== */
+
+.countdown-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.countdown-modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.countdown-box {
+  background: linear-gradient(180deg, #111827, #020617);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px 60px;
+  text-align: center;
+}
+
+.countdown-box span {
+  font-size: 72px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulse 1s infinite;
+}
+
+.countdown-box p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* =====================================================
+   ANIMAÇÕES
+===================================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+
+/* =====================================================
+   MODAL ALERTA
+===================================================== */
+
+.alert-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.alert-modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.alert-box {
+  background: linear-gradient(180deg, #111827, #020617);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 28px 32px;
+  max-width: 360px;
+  width: calc(100% - 32px);
+  text-align: center;
+  animation: alertIn 0.3s ease;
+}
+
+.alert-box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.alert-box p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.alert-box button {
+  min-width: 120px;
+}
+
+@keyframes alertIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

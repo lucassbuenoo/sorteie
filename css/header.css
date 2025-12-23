@@ -1,0 +1,131 @@
+/* ===============================
+   HEADER – SORTEIE.COM (ISOLADO)
+   =============================== */
+
+:root {
+  --bg: #020617;
+  --accent: #e30613;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+}
+
+/* ===== HEADER BASE ===== */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.95),
+    rgba(2, 6, 23, 0.95)
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+/* ===== CONTAINER ===== */
+.main-header .header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* ===== BRAND ===== */
+.main-header .brand {
+  display: flex;
+  align-items: center;
+}
+
+.main-header .brand img {
+  height: 64px; /* 🔑 TAMANHO CORRETO */
+  width: auto;
+  display: block;
+}
+
+/* ===== NAV ===== */
+.main-header .main-nav {
+  display: flex;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 6px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.main-header .main-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+
+.main-header .main-nav a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ===== INFO BAR ===== */
+.main-header .header-info {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  font-size: 12px;
+  padding: 6px 16px 10px;
+  color: var(--muted);
+}
+
+.main-header .status.online {
+  color: #22c55e;
+  font-weight: 700;
+  position: relative;
+  padding-left: 14px;
+}
+
+.main-header .status.online::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+  .main-header .header-container {
+    flex-direction: column;
+  }
+
+  .main-header .brand img {
+    height: 56px;
+  }
+
+  .main-header .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

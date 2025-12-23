@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Sorteie.com - Sorteador Oficial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+
+
+</head>
+
+<body>
+
+  <!-- Header carregado -->
+  <div id="header"></div>
+
+  <!-- APP -->
+  <main class="app">
+
+    <section class="layout">
+
+      <!-- SLOT MACHINE -->
+      <div class="slot-wrap">
+        <div class="slot-machine">
+          <div class="reel">
+            <div class="reel-inner" id="reel1"></div>
+          </div>
+          <div class="reel">
+            <div class="reel-inner" id="reel2"></div>
+          </div>
+          <div class="reel">
+            <div class="reel-inner" id="reel3"></div>
+          </div>
+
+          <div class="slot-glass"></div>
+          <div class="slot-frame"></div>
+        </div>
+      </div>
+
+      <!-- CONTROLES -->
+      <aside class="controls-numbers">
+        <label class="check">
+          <input type="checkbox" id="noRepeat">
+          Não repetir números
+        </label>
+
+        <div class="row">
+          <div>
+            <label>De</label>
+            <input type="number" id="start" value="1">
+          </div>
+          <div>
+            <label>Até</label>
+            <input type="number" id="end" value="100">
+          </div>
+        </div>
+
+        <button id="spinBtn">GIRAR</button>
+        <button class="secondary" id="clearHistory">Limpar Histórico</button>
+
+        <div class="history" id="historyList"></div>
+      </aside>
+
+    </section>
+
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p class="footer-brand">
+        <strong>Sorteie.com</strong> — Plataforma simples para sorteios online
+      </p>
+      <p class="footer-note">
+        Os sorteios são realizados localmente no navegador • Nenhum dado é armazenado
+      </p>
+
+      <p class="footer-copy">
+        © 2025 Sorteie.com
+      </p>
+    </div>
+  </footer>
+
+
+  <script src="/js/numbers.js"></script>
+  <!-- Loader do componente -->
+  <script>
+    fetch('./components/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header').innerHTML = html;
+      });
+  </script>
+
+
+</body>
+
+</html>

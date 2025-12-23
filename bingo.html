@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Sorteie.com - Bingo Profissional</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/bingo.css">
+  
+
+</head>
+
+<body>
+
+   <!-- Header carregado -->
+    <div id="header"></div>
+
+  <div class="app">
+
+    <!-- LAYOUT -->
+    <div class="layout bingo-layout">
+
+      <!-- ÁREA DO BINGO -->
+      <section class="bingo-machine-area">
+
+        <div class="machine">
+          <div class="balls-cloud" id="cloud"></div>
+
+          <div class="display">
+            <span id="display">?</span>
+          </div>
+
+          <div class="main-ball" id="ball"></div>
+        </div>
+
+        <div class="controls">
+          <button id="draw">SORTEAR BOLA</button>
+          <button id="reset" class="secondary">REINICIAR</button>
+        </div>
+
+      </section>
+
+      <!-- TABULEIRO -->
+      <section class="bingo-board">
+        <h3>Cartela do Bingo</h3>
+        <div class="board" id="board"></div>
+      </section>
+
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p class="footer-brand">
+        <strong>Sorteie.com</strong> — Plataforma simples para sorteios online
+      </p>
+      <p class="footer-note">
+        Os sorteios são realizados localmente no navegador • Nenhum dado é armazenado
+      </p>
+
+      <p class="footer-copy">
+        © 2025 Sorteie.com
+      </p>
+    </div>
+  </footer>
+
+  <script src="/js/bingo.js"></script>
+
+   <!-- Loader do componente -->
+  <script>
+    fetch('./components/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header').innerHTML = html;
+      });
+  </script>
+</body>
+
+</html>

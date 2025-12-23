@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Sorteie.com - Sortear Nomes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/names.css">
+
+
+  <!-- Libs -->
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  </script>
+</head>
+
+<body>
+
+
+  <!-- Header carregado -->
+  <div id="header"></div>
+  <div class="app">
+
+    <!-- LAYOUT -->
+    <div class="layout">
+
+      <!-- PAINEL PRINCIPAL -->
+      <section class="names-panel">
+
+        <h2>Lista de Participantes</h2>
+
+        <div class="import-box">
+          <label for="fileInput">Importar Arquivo</label>
+          <input type="file" id="fileInput" accept=".csv,.xlsx,.xls,.pdf">
+          <span>Formatos aceitos: Excel, CSV ou PDF</span>
+        </div>
+
+        <textarea id="namesInput" placeholder="Digite um nome por linha"></textarea>
+
+        <!-- CONTROLES -->
+        <div class="control-card">
+          <h3>Configurações</h3>
+
+          <div class="draw-options">
+            <div class="draw-qty">
+              <label for="drawCount">Qtd</label>
+              <input type="number" id="drawCount" value="1" min="1">
+            </div>
+
+            <label class="checkbox inline">
+              <input type="checkbox" id="enableCountdown" checked>
+              Contagem (5s)
+            </label>
+          </div>
+
+
+          <div class="buttons-group">
+            <button id="drawBtn">SORTEAR</button>
+            <button id="stepBtn" class="secondary">1 POR VEZ</button>
+            <button id="clearBtn" class="secondary danger">Limpar Tudo</button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- RESULTADO -->
+      <aside class="names-results">
+        <div class="control-card">
+          <h3>Resultado</h3>
+          <div class="result-list" id="resultList"></div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- MODAL CONTAGEM -->
+  <div class="countdown-modal" id="countdownModal">
+    <div class="countdown-box">
+      <span id="countdownNumber">5</span>
+      <p>Sorteio iniciando...</p>
+    </div>
+  </div>
+
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p class="footer-brand">
+        <strong>Sorteie.com</strong> — Plataforma simples para sorteios online
+      </p>
+      <p class="footer-note">
+        Os sorteios são realizados localmente no navegador • Nenhum dado é armazenado
+      </p>
+
+      <p class="footer-copy">
+        © 2025 Sorteie.com
+      </p>
+    </div>
+  </footer>
+
+  <script src="/js/names.js"></script>
+  <!-- Loader do componente -->
+  <script>
+    fetch('./components/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header').innerHTML = html;
+      });
+  </script>
+
+  <!-- MODAL ALERTA -->
+<div class="alert-modal" id="alertModal">
+  <div class="alert-box">
+    <h3 id="alertTitle">Atenção</h3>
+    <p id="alertMessage"></p>
+    <button id="alertClose">OK</button>
+  </div>
+</div>
+
+</body>
+
+</html>
