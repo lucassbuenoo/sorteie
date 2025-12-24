@@ -3,22 +3,32 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Sorteieaqui.com.br - Bingo Profissional</title>
+
+  <title>Bingo Online Profissional Grátis | SorteieAqui</title>
+  <meta name="description"
+    content="Bingo online profissional e gratuito para eventos, igrejas, escolas e transmissões ao vivo. Sorteio justo, rápido e sem cadastro.">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/bingo.css">
-  
-
 </head>
 
 <body>
 
-   <!-- Header carregado -->
-    <div id="header"></div>
+  <!-- Header -->
+  <div id="header"></div>
 
-  <div class="app">
+  <main class="app">
+
+    <!-- BLOCO SEO DISCRETO -->
+    <section class="seo-intro">
+      <h1>Bingo Online Profissional</h1>
+      <p class="seo-subtitle">
+        Realize sorteios de bingo de forma justa, visual e sem cadastro, direto no navegador.
+      </p>
+    </section>
 
     <!-- LAYOUT -->
     <div class="layout bingo-layout">
@@ -50,26 +60,34 @@
       </section>
 
     </div>
-  </div>
+
+    <!-- TEXTO SEO FINAL DISCRETO -->
+    <section class="seo-text">
+      <p>
+        Este bingo online profissional é ideal para eventos, igrejas, escolas, festas,
+        ações beneficentes e transmissões ao vivo. Todo o sorteio acontece localmente
+        no navegador, garantindo transparência e rapidez.
+      </p>
+    </section>
+
+  </main>
 
   <footer class="main-footer">
     <div class="footer-content">
       <p class="footer-brand">
-        <strong>Sorteie.com</strong> — Plataforma simples para sorteios online
+        <strong>SorteieAqui</strong> — Plataforma simples para sorteios online
       </p>
       <p class="footer-note">
         Os sorteios são realizados localmente no navegador • Nenhum dado é armazenado
       </p>
-
       <p class="footer-copy">
-        © 2025 Sorteie.com
+        © 2025 SorteieAqui
       </p>
     </div>
   </footer>
 
   <script src="/js/bingo.js"></script>
 
-   <!-- Loader do componente -->
   <script>
     fetch('./components/header.html')
       .then(res => res.text())
@@ -77,6 +95,6 @@
         document.getElementById('header').innerHTML = html;
       });
   </script>
-</body>
 
+</body>
 </html>

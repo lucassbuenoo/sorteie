@@ -3,34 +3,50 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Sorteieaqui.com.br - Sorteador Oficial</title>
+
+  <title>Sorteio Online Grátis de Números | SorteieAqui</title>
+
+  <meta name="description"
+    content="Faça sorteio online grátis de números de forma rápida, justa e sem cadastro. Ideal para professores, eventos, rifas e lives.">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://sorteieaqui.com.br/">
+
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/header.css">
-  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
 
-
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 
-  <!-- Header carregado -->
+  <!-- Header carregado dinamicamente -->
   <div id="header"></div>
 
-  <!-- APP -->
   <main class="app">
 
-    <section class="layout">
+    <!-- H1 SEO -->
+    <h1 class="seo-title">
+      Sorteio Online Grátis de Números
+    </h1>
 
-      <!-- SLOT MACHINE -->
+    <!-- Aplicação -->
+    <section class="layout" aria-label="Ferramenta de sorteio de números online">
+
+      <!-- Slot Machine -->
       <div class="slot-wrap">
-        <div class="slot-machine">
+        <div class="slot-machine" aria-hidden="true">
+
           <div class="reel">
             <div class="reel-inner" id="reel1"></div>
           </div>
+
           <div class="reel">
             <div class="reel-inner" id="reel2"></div>
           </div>
+
           <div class="reel">
             <div class="reel-inner" id="reel3"></div>
           </div>
@@ -40,8 +56,9 @@
         </div>
       </div>
 
-      <!-- CONTROLES -->
-      <aside class="controls-numbers">
+      <!-- Controles -->
+      <aside class="controls-numbers" aria-label="Configurações do sorteio">
+
         <label class="check">
           <input type="checkbox" id="noRepeat">
           Não repetir números
@@ -49,11 +66,12 @@
 
         <div class="row">
           <div>
-            <label>De</label>
+            <label for="start">De</label>
             <input type="number" id="start" value="1">
           </div>
+
           <div>
-            <label>Até</label>
+            <label for="end">Até</label>
             <input type="number" id="end" value="100">
           </div>
         </div>
@@ -61,8 +79,37 @@
         <button id="spinBtn">GIRAR</button>
         <button class="secondary" id="clearHistory">Limpar Histórico</button>
 
-        <div class="history" id="historyList"></div>
+        <div class="history" id="historyList" aria-live="polite"></div>
+
       </aside>
+
+    </section>
+
+    <!-- Conteúdo SEO -->
+    <section class="seo-content">
+
+      <h2>Como funciona o sorteio online de números</h2>
+
+      <p>
+        O <strong>SorteieAqui</strong> é uma ferramenta gratuita para
+        <strong>sorteio online de números</strong>, desenvolvida para ser simples,
+        rápida e totalmente justa.
+      </p>
+
+      <p>
+        Você pode definir o intervalo de números, escolher se deseja evitar repetições
+        e realizar o sorteio com apenas um clique, sem necessidade de cadastro.
+      </p>
+
+      <p>
+        É ideal para professores, salas de aula, eventos, rifas, dinâmicas em grupo
+        e transmissões ao vivo.
+      </p>
+
+      <p>
+        Todos os sorteios são realizados diretamente no navegador do usuário,
+        garantindo transparência e privacidade.
+      </p>
 
     </section>
 
@@ -70,30 +117,45 @@
 
   <footer class="main-footer">
     <div class="footer-content">
+
       <p class="footer-brand">
-        <strong>Sorteie.com</strong> — Plataforma simples para sorteios online
+        <strong>SorteieAqui.com.br</strong> — Plataforma gratuita para sorteios online
       </p>
+
       <p class="footer-note">
         Os sorteios são realizados localmente no navegador • Nenhum dado é armazenado
       </p>
 
       <p class="footer-copy">
-        © 2025 Sorteie.com
+        © 2025 SorteieAqui
       </p>
+
     </div>
   </footer>
 
-
+  <!-- Scripts -->
   <script src="/js/numbers.js"></script>
-  <!-- Loader do componente -->
+
   <script>
-    fetch('./components/header.html')
+    fetch('/components/header.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('header').innerHTML = html;
       });
   </script>
 
+  <!-- Dados estruturados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SorteieAqui",
+    "url": "https://sorteieaqui.com.br",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "All",
+    "description": "Ferramenta gratuita para sorteio online de números, nomes e bingo."
+  }
+  </script>
 
 </body>
 

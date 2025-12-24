@@ -34,7 +34,8 @@ body {
 ===================================================== */
 .app {
   width: 100%;
-  min-height: calc(100vh - 190px); /* header médio */
+  min-height: calc(100vh - 190px);
+  /* header médio */
   display: flex;
   flex-direction: column;
 }
@@ -274,4 +275,116 @@ button.secondary:hover {
 /* Botão perigo */
 button.danger {
   background: linear-gradient(135deg, #dc2626, #991b1b);
+}
+
+
+
+/* =====================================================
+   SEO – TÍTULOS E CONTEÚDO INFORMATIVO
+   (apenas complementos, não altera layout atual)
+===================================================== */
+
+/* =====================================================
+   SEO – AJUSTE VISUAL DO H1
+===================================================== */
+
+/* =====================================================
+   SEO / TÍTULO – NÚMEROS
+===================================================== */
+
+.seo-title {
+  max-width: 1100px;
+  margin: 18px auto 6px;
+  padding: 0 16px;
+  text-align: left;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+
+  position: relative;
+}
+
+/* Linha simples abaixo do H1 */
+.seo-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin-top: 6px;
+}
+
+/* Destaque de palavras-chave (mantido, mas discreto) */
+.seo-highlight {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Subtítulo discreto */
+.seo-subtitle {
+  max-width: 520px;
+  margin: 0 16px 16px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: left;
+}
+
+/* Bloco de conteúdo SEO (texto explicativo) */
+.seo-content {
+  max-width: 1000px;
+  margin: 48px auto 0;
+  padding: 28px;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Títulos internos (H2 / H3) */
+.seo-content h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
+.seo-content h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 20px 0 10px;
+  color: var(--text);
+}
+
+/* Parágrafos */
+.seo-content p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+
+/* Listas */
+.seo-content ul {
+  margin: 12px 0 16px 18px;
+}
+
+.seo-content li {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+/* Destaque leve para palavras-chave */
+.seo-highlight {
+  color: #ffca28;
+  font-weight: 700;
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+  .seo-content {
+    padding: 20px;
+  }
 }
