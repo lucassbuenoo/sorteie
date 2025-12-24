@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Bloqueia arquivos técnicos (não agregam SEO)
+Disallow: /js/
+Disallow: /css/
+Disallow: /assets/
+Disallow: /components/
+
+# Sitemap
+Sitemap: https://sorteieaqui.com.br/sitemap.xml
