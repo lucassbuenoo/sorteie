@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>Sorteio Online Gratuito e Seguro | SorteieAqui.com.br</title>
+
+  <meta name="description"
+        content="Faça sorteio online de forma gratuita, rápida e segura. Sorteador de números, nomes e bingo sem cadastro no SorteieAqui.com.br" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS GLOBAL -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <main class="app">
+
+    <!-- H1 SEO discreto -->
+    <section class="seo-wrapper">
+      <h1 class="seo-title-left">
+        Sorteio Online Gratuito
+      </h1>
+      <span class="seo-line"></span>
+    </section>
+
+    <!-- CONTEÚDO -->
+    <section class="content-text">
+
+      <p>
+        O <strong>SorteieAqui.com.br</strong> é uma plataforma gratuita de
+        <strong>sorteio online</strong>, criada para quem precisa realizar
+        sorteios de forma rápida, segura e sem burocracia.
+      </p>
+
+      <p>
+        Todos os sorteios acontecem diretamente no seu navegador, sem necessidade
+        de cadastro, login ou envio de dados para servidores externos.
+        Isso garante transparência, privacidade e total controle do processo.
+      </p>
+
+      <h2>Quais tipos de sorteio você pode fazer?</h2>
+
+      <ul>
+        <li>
+          <strong>Sorteador de Números:</strong> ideal para rifas, promoções,
+          atividades escolares e eventos.
+        </li>
+        <li>
+          <strong>Sorteador de Nomes:</strong> perfeito para listas, participantes
+          ou equipes.
+        </li>
+        <li>
+          <strong>Bingo Online:</strong> solução completa para jogos de bingo
+          profissionais ou recreativos.
+        </li>
+      </ul>
+
+      <h2>Por que usar o SorteieAqui?</h2>
+
+      <ul>
+        <li>Sorteios 100% locais no navegador</li>
+        <li>Sem coleta ou armazenamento de dados</li>
+        <li>Interface simples, moderna e responsiva</li>
+        <li>Totalmente gratuito</li>
+      </ul>
+
+      <p>
+        Utilize os links abaixo para acessar o tipo de sorteio ideal para sua
+        necessidade.
+      </p>
+
+      <!-- LINKS INTERNOS (SEO forte) -->
+      <div class="cta-links">
+        <a href="/index.html">Sorteador de Números</a>
+        <a href="/names.html">Sorteador de Nomes</a>
+        <a href="/bingo.html">Bingo Online</a>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+<script>
+  fetch('/components/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer').innerHTML = html;
+    });
+</script>
+
+  <!-- Loader Header -->
+  <script>
+    fetch('/components/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header').innerHTML = html;
+      });
+  </script>
+
+</body>
+</html>

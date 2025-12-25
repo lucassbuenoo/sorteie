@@ -1,0 +1,47 @@
+.mega-card {
+  text-align: center;
+}
+
+.mega-result {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.ball {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  margin: 12px auto 24px;
+}
+
+.seo-content {
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.seo-content h2 {
+  margin-top: 24px;
+  font-size: 16px;
+}
+
+.alert {
+  font-size: 13px;
+  color: var(--muted);
+  background: rgba(255,255,255,0.04);
+  padding: 12px;
+  border-radius: 8px;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Política de Privacidade | SorteieAqui.com.br</title>
+
+  <meta name="description"
+    content="Saiba como o SorteieAqui.com.br protege sua privacidade. Não coletamos nem armazenamos dados pessoais.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/pages.css">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <main class="page-container">
+    <section class="page-card">
+
+      <h1 class="seo-title">Política de Privacidade</h1>
+
+      <p class="page-subtitle">
+        Sua privacidade é prioridade
+      </p>
+
+      <h2>Coleta de dados</h2>
+      <p>
+        O SorteieAqui.com.br não coleta, armazena ou compartilha dados pessoais.
+        Todas as informações permanecem apenas no navegador do usuário.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        Utilizamos apenas cookies técnicos e estatísticos,
+        sem identificação pessoal.
+      </p>
+
+      <h2>Links externos</h2>
+      <p>
+        Não nos responsabilizamos pelas políticas de privacidade
+        de sites de terceiros.
+      </p>
+
+      <p>
+        Última atualização: dezembro de 2025.
+      </p>
+
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    fetch('/components/header.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('header').innerHTML = html);
+
+    fetch('/components/footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer').innerHTML = html);
+  </script>
+
+</body>
+</html>

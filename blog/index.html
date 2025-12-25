@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <title>Blog SorteieAqui | Dicas e Guias sobre Sorteios Online</title>
+
+  <meta name="description"
+    content="Blog do SorteieAqui com dicas, guias e boas práticas sobre sorteios online, sorteadores e bingo digital." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/blog.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <main class="app">
+
+    <!-- SEO Title discreto -->
+    <section class="seo-wrapper">
+      <h1 class="seo-title-left">Blog sobre Sorteios Online</h1>
+      <span class="seo-line"></span>
+    </section>
+
+    <!-- Introdução -->
+    <section class="blog-intro">
+      <p>
+        Conteúdos práticos sobre <strong>sorteio online</strong>, sorteadores,
+        bingo digital e boas práticas para garantir resultados justos e seguros.
+      </p>
+    </section>
+
+    <!-- Lista de artigos -->
+    <section class="blog-list" id="blogList"></section>
+
+    <nav class="pagination" id="pagination" aria-label="Paginação do blog"></nav>
+
+
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script>
+    fetch('/components/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('footer').innerHTML = html;
+      });
+  </script>
+
+  <!-- Header loader -->
+  <script>
+    fetch('/components/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header').innerHTML = html;
+      });
+  </script>
+
+  <script>
+const POSTS_PER_PAGE = 5;
+
+fetch('/blog/posts.json')
+  .then(res => res.json())
+  .then(posts => {
+    const params = new URLSearchParams(window.location.search);
+    const currentPage = parseInt(params.get('page')) || 1;
+
+    const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+    const start = (currentPage - 1) * POSTS_PER_PAGE;
+    const end = start + POSTS_PER_PAGE;
+
+    const visiblePosts = posts.slice(start, end);
+
+    const list = document.getElementById('blogList');
+    const pagination = document.getElementById('pagination');
+
+    list.innerHTML = '';
+    pagination.innerHTML = '';
+
+    // Render posts
+    visiblePosts.forEach(post => {
+      const article = document.createElement('article');
+      article.className = 'blog-card';
+
+      article.innerHTML = `
+        <h2>
+          <a href="/blog/${post.slug}.html">${post.title}</a>
+        </h2>
+        <p>${post.description}</p>
+        <a class="read-more" href="/blog/${post.slug}.html">
+          Ler artigo →
+        </a>
+      `;
+
+      list.appendChild(article);
+    });
+
+    // Render pagination
+    for (let i = 1; i <= totalPages; i++) {
+      const link = document.createElement('a');
+      link.href = i === 1 ? '/blog/' : `/blog/?page=${i}`;
+      link.textContent = i;
+
+      if (i === currentPage) {
+        link.classList.add('active');
+      }
+
+      pagination.appendChild(link);
+    }
+  });
+
+
+  </script>
+
+
+</body>
+
+</html>

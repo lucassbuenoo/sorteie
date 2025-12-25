@@ -1,0 +1,398 @@
+/* =================== Paginação ===========*/
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 40px 0 20px;
+}
+
+.pagination a {
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #020617;
+  border: 1px solid rgba(255,255,255,.08);
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+.pagination a:hover {
+  border-color: var(--accent);
+  color: #fff;
+}
+
+
+/* =====================================================
+   SEO – TÍTULOS E CONTEÚDO INFORMATIVO
+   (apenas complementos, não altera layout atual)
+===================================================== */
+
+/* =====================================================
+   SEO – AJUSTE VISUAL DO H1
+===================================================== */
+
+/* =====================================================
+   SEO / TÍTULO – NÚMEROS
+===================================================== */
+
+.seo-title {
+  max-width: 1100px;
+  margin: 18px auto 6px;
+  padding: 0 16px;
+  text-align: left;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+
+  position: relative;
+}
+
+/* Linha simples abaixo do H1 */
+.seo-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin-top: 6px;
+}
+
+/* Destaque de palavras-chave (mantido, mas discreto) */
+.seo-highlight {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Subtítulo discreto */
+.seo-subtitle {
+  max-width: 520px;
+  margin: 0 16px 16px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: left;
+}
+
+/* Bloco de conteúdo SEO (texto explicativo) */
+.seo-content {
+  max-width: 1000px;
+  margin: 48px auto 0;
+  padding: 28px;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Títulos internos (H2 / H3) */
+.seo-content h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
+.seo-content h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 20px 0 10px;
+  color: var(--text);
+}
+
+/* Parágrafos */
+.seo-content p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+
+/* Listas */
+.seo-content ul {
+  margin: 12px 0 16px 18px;
+}
+
+.seo-content li {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+/* Destaque leve para palavras-chave */
+.seo-highlight {
+  color: #ffca28;
+  font-weight: 700;
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+  .seo-content {
+    padding: 20px;
+  }
+}
+
+
+/* =====================================================
+   SEO CONTENT
+===================================================== */
+
+
+
+/* SEO H1 discreto */
+.seo-wrapper {
+  max-width: 1200px;
+  margin: 24px auto 12px;
+  padding: 0 16px;
+}
+
+.seo-title-left {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.seo-line {
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.6;
+}
+
+/* Texto principal */
+.content-text {
+  max-width: 900px;
+  margin: 0 auto 48px;
+  padding: 0 16px;
+  line-height: 1.7;
+  color: #d1d5db;
+}
+
+.content-text h2 {
+  margin-top: 28px;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.content-text ul {
+  padding-left: 18px;
+}
+
+.content-text li {
+  margin-bottom: 8px;
+}
+
+/* Links internos */
+.cta-links {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.cta-links a {
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.08);
+  text-decoration: none;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.cta-links a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+
+
+/* =====================================================
+   BLOG
+===================================================== */
+
+.blog-intro {
+  max-width: 900px;
+  margin: 12px auto 32px;
+  padding: 0 16px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* Lista de artigos */
+.blog-list {
+  max-width: 900px;
+  margin: 0 auto 48px;
+  padding: 0 16px;
+  display: grid;
+  gap: 20px;
+}
+
+/* Card */
+.blog-card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 22px;
+  transition: border .2s ease, transform .2s ease;
+}
+
+.blog-card:hover {
+  border-color: rgba(34,211,238,.4);
+  transform: translateY(-2px);
+}
+
+.blog-card h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.blog-card h2 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.blog-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Ler mais */
+.read-more {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Card desativado */
+.blog-card.disabled {
+  opacity: .5;
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   BLOG – ARTIGOS LONGOS (SEO)
+===================================================== */
+
+.blog {
+  max-width: 900px;
+  margin: 32px auto 48px;
+  padding: 0 16px;
+}
+
+.blog-article {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px;
+  padding: 36px 40px;
+}
+
+/* H1 SEO */
+.blog-article h1.seo-title {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  color: #e5e7eb;
+  margin-bottom: 8px;
+}
+
+.blog-article h1.seo-title::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 2px;
+  background: var(--accent);
+  margin-top: 8px;
+  opacity: .6;
+}
+
+/* Subtítulo */
+.blog-article .seo-subtitle {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+/* Texto */
+.blog-article p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #e5e7eb;
+  margin-bottom: 16px;
+}
+
+/* Subtítulos */
+.blog-article h2 {
+  margin-top: 32px;
+  margin-bottom: 12px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.blog-article h2::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 2px;
+  background: var(--accent);
+  margin-top: 6px;
+  opacity: .4;
+}
+
+/* Listas */
+.blog-article ul,
+.blog-article ol {
+  margin: 16px 0 24px;
+  padding-left: 18px;
+}
+
+.blog-article li {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+/* Links */
+.blog-article a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.blog-article a:hover {
+  text-decoration: underline;
+}
+
+/* Tabela */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 24px 0;
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+  .blog-article {
+    padding: 26px 22px;
+  }
+
+  .blog-article p,
+  .blog-article li {
+    font-size: 14px;
+  }
+}

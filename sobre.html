@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Sobre o SorteieAqui.com.br | Plataforma de Sorteios Online</title>
+
+  <meta name="description"
+    content="Conheça o SorteieAqui.com.br, uma plataforma gratuita para sorteios online de números, nomes e bingo. Simples, justa e sem cadastro.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/pages.css">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <main class="page-container">
+    <section class="page-card">
+
+      <h1 class="seo-title">
+        Sobre o <span class="seo-highlight">SorteieAqui.com.br</span>
+      </h1>
+
+      <p class="page-subtitle">
+        Plataforma gratuita, simples e confiável para sorteios online
+      </p>
+
+      <p>
+        O <strong>SorteieAqui.com.br</strong> nasceu com o objetivo de oferecer uma solução
+        simples, rápida e transparente para quem precisa realizar sorteios online,
+        sem burocracia e sem necessidade de cadastro.
+      </p>
+
+      <p>
+        Nossa plataforma permite realizar sorteios de <strong>números</strong>,
+        <strong>nomes</strong> e <strong>bingo online</strong>, atendendo professores,
+        organizadores de eventos, empresas, igrejas, lives e uso pessoal.
+      </p>
+
+      <p>
+        Todos os sorteios são realizados diretamente no navegador do usuário.
+        <strong>Nenhuma informação é enviada ou armazenada em servidores</strong>,
+        garantindo total privacidade e transparência no processo.
+      </p>
+
+      <h2>Por que usar o SorteieAqui?</h2>
+
+      <ul>
+        <li>Gratuito e sem cadastro</li>
+        <li>Sorteios justos e transparentes</li>
+        <li>Funciona em qualquer dispositivo</li>
+        <li>Ideal para aulas, eventos e transmissões ao vivo</li>
+      </ul>
+
+      <p>
+        Estamos em constante evolução para melhorar a experiência dos usuários
+        e ampliar os recursos da plataforma.
+      </p>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script>
+    fetch('/components/header.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('header').innerHTML = html);
+
+    fetch('/components/footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer').innerHTML = html);
+  </script>
+
+</body>
+</html>

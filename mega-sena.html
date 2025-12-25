@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>Sorteador de Números da Mega-Sena Online | SorteieAqui</title>
+
+  <meta name="description"
+    content="Gere números da Mega-Sena online de forma gratuita. Sorteador aleatório com 6 dezenas entre 1 e 60. Simples, rápido e sem cadastro.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <!-- CSS da página -->
+  <link rel="stylesheet" href="/css/mega-sena.css">
+
+
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <main class="app">
+
+    <section class="layout" style="grid-template-columns: 1fr;">
+      <article class="control-card mega-card">
+
+        <h1 class="seo-title">
+          Sorteador de Números da <span class="seo-highlight">Mega-Sena</span>
+        </h1>
+
+        <p class="seo-subtitle">
+          Gere combinações aleatórias para apostar na Mega-Sena.
+        </p>
+
+        <!-- Resultado -->
+        <div class="mega-result" id="megaResult">
+          <span class="ball">?</span>
+          <span class="ball">?</span>
+          <span class="ball">?</span>
+          <span class="ball">?</span>
+          <span class="ball">?</span>
+          <span class="ball">?</span>
+        </div>
+
+        <!-- Botão -->
+        <button class="btn-primary" id="generateMega">
+          Gerar números da Mega-Sena
+        </button>
+
+        <!-- Texto SEO -->
+        <div class="seo-content">
+
+          <h2>Como funciona o sorteador da Mega-Sena?</h2>
+
+          <p>
+            Este sorteador gera <strong>6 números aleatórios entre 1 e 60</strong>,
+            seguindo o padrão oficial da Mega-Sena. Os números são sorteados de forma
+            totalmente aleatória diretamente no seu navegador.
+          </p>
+
+          <p>
+            Nenhuma informação é armazenada ou enviada para servidores.
+            Todo o processo acontece localmente, garantindo privacidade e rapidez.
+          </p>
+
+          <h2>Quantos números são sorteados na Mega-Sena?</h2>
+
+          <p>
+            A Mega-Sena sorteia 6 dezenas por concurso. Para apostar,
+            o jogador escolhe de 6 a 15 números entre 1 e 60.
+          </p>
+
+          <h2>Aviso importante</h2>
+
+          <p class="alert">
+            Este site não possui vínculo com a Caixa Econômica Federal.
+            Os números gerados são aleatórios e não garantem premiação.
+          </p>
+
+        </div>
+
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Componentes -->
+  <script>
+    fetch('/components/header.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('header').innerHTML = html);
+
+    fetch('/components/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('footer').innerHTML = html);
+  </script>
+
+  <!-- JS da página -->
+  <script src="/js/mega-sena.js"></script>
+
+</body>
+</html>

@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/names.css">
 
 
@@ -122,19 +123,15 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="main-footer">
-    <div class="footer-content">
-      <p class="footer-brand">
-        <strong>SorteieAqui</strong> — Plataforma simples para sorteios online
-      </p>
-      <p class="footer-note">
-        Os sorteios são realizados localmente no navegador • Nenhum dado é armazenado
-      </p>
-      <p class="footer-copy">
-        © 2025 SorteieAqui
-      </p>
-    </div>
-  </footer>
+<div id="footer"></div>
+
+<script>
+  fetch('/components/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer').innerHTML = html;
+    });
+</script>
 
   <script src="/js/names.js"></script>
 

@@ -1,0 +1,134 @@
+/* =====================================================
+   PÁGINAS INSTITUCIONAIS
+   Sobre • Privacidade • Termos • Blog
+===================================================== */
+
+/* Container geral */
+.page-container {
+  max-width: 900px;
+  margin: 32px auto 48px;
+  padding: 0 16px;
+}
+
+/* Cartão do conteúdo */
+.page-card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px;
+  padding: 36px 40px;
+}
+
+/* -----------------------------------------------------
+   TÍTULOS
+----------------------------------------------------- */
+
+.page-card h1.seo-title {
+  text-align: left;
+  margin-bottom: 6px;
+}
+
+.page-card h1.seo-title::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 2px;
+  background: var(--accent);
+  margin-top: 8px;
+  opacity: .6;
+}
+
+/* Subtítulo */
+.page-subtitle {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+/* -----------------------------------------------------
+   TEXTOS
+----------------------------------------------------- */
+
+.page-card p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #e5e7eb;
+  margin-bottom: 16px;
+}
+
+/* Destaques */
+.page-card strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+/* -----------------------------------------------------
+   SUBTÍTULOS
+----------------------------------------------------- */
+
+.page-card h2 {
+  margin-top: 32px;
+  margin-bottom: 12px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Linha sutil abaixo do h2 */
+.page-card h2::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 2px;
+  background: var(--accent);
+  margin-top: 6px;
+  opacity: .4;
+}
+
+/* -----------------------------------------------------
+   LISTAS
+----------------------------------------------------- */
+
+.page-card ul {
+  margin: 16px 0 24px;
+  padding-left: 18px;
+}
+
+.page-card li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #e5e7eb;
+  margin-bottom: 8px;
+}
+
+/* -----------------------------------------------------
+   LINKS
+----------------------------------------------------- */
+
+.page-card a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.page-card a:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------------------------------
+   RESPONSIVO
+----------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .page-card {
+    padding: 26px 22px;
+  }
+
+  .page-card h2 {
+    font-size: 16px;
+  }
+
+  .page-card p,
+  .page-card li {
+    font-size: 14px;
+  }
+}

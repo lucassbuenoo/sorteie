@@ -210,38 +210,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* =====================================================
-   FOOTER
-===================================================== */
-.main-footer {
-  background: var(--card);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 40px;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-brand {
-  font-size: 14px;
-}
-
-.footer-note {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.footer-copy {
-  font-size: 11px;
-  color: var(--muted);
-}
 
 
 button {
@@ -278,37 +246,29 @@ button.danger {
 }
 
 
-
-/* =====================================================
-   SEO – TÍTULOS E CONTEÚDO INFORMATIVO
-   (apenas complementos, não altera layout atual)
+/*
+   SEO / CONTEXTO DE PÁGINA
 ===================================================== */
 
-/* =====================================================
-   SEO – AJUSTE VISUAL DO H1
-===================================================== */
-
-/* =====================================================
-   SEO / TÍTULO – NÚMEROS
-===================================================== */
-
-.seo-title {
+.seo-intro {
   max-width: 1100px;
   margin: 18px auto 6px;
   padding: 0 16px;
   text-align: left;
+}
 
+.seo-intro h1 {
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--muted);
-
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
   position: relative;
 }
 
-/* Linha simples abaixo do H1 */
-.seo-title::after {
+/* Linha sutil abaixo do H1 */
+.seo-intro h1::after {
   content: "";
   display: block;
   width: 48px;
@@ -317,74 +277,25 @@ button.danger {
   margin-top: 6px;
 }
 
-/* Destaque de palavras-chave (mantido, mas discreto) */
-.seo-highlight {
-  color: var(--accent);
-  font-weight: 700;
-}
-
-/* Subtítulo discreto */
+/* Subtítulo ainda mais discreto */
 .seo-subtitle {
-  max-width: 520px;
-  margin: 0 16px 16px;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.45);
-  text-align: left;
+  max-width: 520px;
 }
 
-/* Bloco de conteúdo SEO (texto explicativo) */
-.seo-content {
-  max-width: 1000px;
-  margin: 48px auto 0;
-  padding: 28px;
-  background: linear-gradient(180deg, #0f172a, #020617);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+
+
+/* Texto SEO discreto no final */
+.seo-text {
+  max-width: 900px;
+  margin: 24px auto 0;
+  padding: 0 16px;
+  text-align: center;
 }
 
-/* Títulos internos (H2 / H3) */
-.seo-content h2 {
-  font-size: 22px;
-  font-weight: 800;
-  margin-bottom: 14px;
-  color: var(--text);
-}
-
-.seo-content h3 {
-  font-size: 17px;
-  font-weight: 700;
-  margin: 20px 0 10px;
-  color: var(--text);
-}
-
-/* Parágrafos */
-.seo-content p {
-  font-size: 14px;
+.seo-text p {
+  font-size: 12px;
+  line-height: 1.6;
   color: var(--muted);
-  margin-bottom: 14px;
-  line-height: 1.7;
-}
-
-/* Listas */
-.seo-content ul {
-  margin: 12px 0 16px 18px;
-}
-
-.seo-content li {
-  font-size: 14px;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
-
-/* Destaque leve para palavras-chave */
-.seo-highlight {
-  color: #ffca28;
-  font-weight: 700;
-}
-
-/* Responsivo */
-@media (max-width: 700px) {
-  .seo-content {
-    padding: 20px;
-  }
 }
